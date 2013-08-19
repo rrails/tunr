@@ -1,0 +1,7 @@
+%table#genres
+  -@genres.each do |genre|
+    %tr
+      %td
+      %td= genre.name
+      %td= link_to('Edit', edit_genre_path(genre), :class => 'button radius tiny') if is_admin?
+      %td= link_to('Delete', genre, :method => :delete, :confirm => 'Really?', :class => 'button radius alert tiny') if is_admin?

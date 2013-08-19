@@ -1,0 +1,11 @@
+.row
+  .small-5.columns
+    = render(:partial => '/shared/errors')
+    = form_for @album do |f|
+      = f.label :name
+      = f.text_field :name, :autofocus => true
+      = f.label :image
+      = f.text_field :image
+      = f.submit nil, :class => 'button radius'
+  .small-7.columns
+    %p help

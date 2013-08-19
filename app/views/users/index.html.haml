@@ -1,0 +1,11 @@
+%table#users
+  -@users.each do |user|
+    %tr
+      %td
+        - if user.is_admin?
+          %span.label.alert.radius= user.name
+        -else
+          %span.label.success.radius= user.name
+      %td= image_tag(user.image)
+      %td= number_to_currency(user.balance)
+      %td= link_to('Delete', user, :method => :delete, :confirm => 'Really?', :class => 'button radius alert tiny')

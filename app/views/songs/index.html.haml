@@ -1,0 +1,8 @@
+%table#songs
+  -@songs.each do |song|
+    %tr
+      %td
+      %td= image_tag(song.image)
+      %td= song.name
+      %td= link_to('Edit', edit_song_path(song), :class => 'button radius tiny') if is_admin?
+      %td= link_to('Delete', song, :method => :delete, :confirm => 'Really?', :class => 'button radius alert tiny') if is_admin?

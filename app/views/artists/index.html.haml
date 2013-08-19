@@ -1,0 +1,7 @@
+%table#artists
+  -@artists.each do |artist|
+    %tr
+      %td
+      %td= artist.name
+      %td= link_to('Edit', edit_artist_path(artist), :class => 'button radius tiny') if is_admin?
+      %td= link_to('Delete', artist, :method => :delete, :confirm => 'Really?', :class => 'button radius alert tiny') if is_admin?
